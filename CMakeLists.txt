@@ -25,7 +25,7 @@ add_library(xxhash STATIC src/xxhash.c)
 
 add_library(primes STATIC src/primes.c)
 
-add_library(hashtable STATIC src/hash-table.c)
+add_library(hashtable STATIC src/ht.c)
 target_link_libraries(hashtable xxhash primes)
 
 add_executable(tests src/tests.c)

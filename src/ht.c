@@ -1,4 +1,4 @@
-#include "hash-table.h"
+#include "ht.h"
 
 static size_t HT_INITIAL_TARGET = 1000;
 static struct ht_item HT_ITEM_DELETED = {NULL, NULL};
