@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "xxhash.h"
+#include "primes.h"
 
 struct ht_item{
     char *key;
@@ -12,7 +13,8 @@ struct ht_item{
 };
 
 typedef struct ht{
-    size_t size;
+    size_t target_size;
+    size_t real_size;
     size_t count;
     unsigned long long seed_a;
     unsigned long long seed_b;
@@ -22,8 +24,8 @@ typedef struct ht{
     char *(*search)(struct ht*, const char *);
     void (*remove)(struct ht*, const char *);
     void (*kill)(struct ht**);
-}hashtable;
+}ht_t;
 
-hashtable *ht_init();
+ht_t *ht_init();
 
 #endif //HASHTABLE_HASH_TABLE_H
