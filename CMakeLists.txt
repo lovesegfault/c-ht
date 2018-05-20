@@ -23,8 +23,10 @@ set(CMAKE_C_FLAGS_RELEASE "-std=c99 -O3 -flto ${TUNE} ${WARNINGS}")
 
 add_library(xxhash STATIC src/xxhash.c)
 
+add_library(primes STATIC src/primes.c)
+
 add_library(hashtable STATIC src/hash-table.c)
-target_link_libraries(hashtable xxhash)
+target_link_libraries(hashtable xxhash primes)
 
 add_executable(tests src/tests.c)
 target_link_libraries(tests hashtable)
